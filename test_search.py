@@ -4,6 +4,12 @@ import asyncio
 
 from docs2db_api.rag.engine import UniversalRAGEngine, RAGConfig
 
+QUESTIONS = [
+    "how do I fork a repo on Pagure?",
+    "git clone ssh failing on src.fedoraproject.org",
+    "how do I become a Fedora contributor?",
+]
+
 
 async def test():
     engine = UniversalRAGEngine(
@@ -16,13 +22,7 @@ async def test():
     )
     await engine.start()
 
-    questions = [
-        "how do I fork a repo on Pagure?",
-        "git clone ssh failing on src.fedoraproject.org",
-        "how do I become a Fedora contributor?",
-    ]
-
-    for q in questions:
+    for q in QUESTIONS:
         print(f"\n{'='*60}")
         print(f"Q: {q}")
         print('='*60)
@@ -38,6 +38,7 @@ async def test():
             print(f"     source: {source}")
 
     await engine.close()
+    print("\nDone.")
 
 
 asyncio.run(test())

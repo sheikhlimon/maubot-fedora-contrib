@@ -30,10 +30,10 @@ Plugin formats and replies in Matrix
 
 This plugin queries a pre-built RAG database of Fedora documentation. The database is built by the [FedoraDocsRAG](https://github.com/Lifto/FedoraDocsRAG) pipeline, which uses the [docs2db](https://github.com/rhel-lightspeed/docs2db) toolchain:
 
-1. **[docs2db](https://github.com/rhel-lightspeed/docs2db)** — ingests, chunks, and embeds documents into PostgreSQL with pgvector
-2. **[FedoraDocsRAG](https://github.com/Lifto/FedoraDocsRAG)** — uses docs2db to build a RAG database from all Fedora documentation (64 repos, 1681+ pages)
-3. **[docs2db-api](https://github.com/rhel-lightspeed/docs2db-api)** — queries the database with hybrid search + reranking
-4. **This plugin** — wraps docs2db-api as a Maubot plugin for Matrix
+1. [docs2db](https://github.com/rhel-lightspeed/docs2db) — ingests, chunks, and embeds documents into PostgreSQL with pgvector
+2. [FedoraDocsRAG](https://github.com/Lifto/FedoraDocsRAG) — uses docs2db to build a RAG database from all Fedora documentation (64 repos, 1681+ pages)
+3. [docs2db-api](https://github.com/rhel-lightspeed/docs2db-api) — queries the database with hybrid search + reranking
+4. This plugin — wraps docs2db-api as a Maubot plugin for Matrix
 
 ### Building the database
 
@@ -99,14 +99,16 @@ uvx docs2db-api query "how do I fork a repo on Pagure?"
 
 ### Running locally for development
 
+> **Warning:** You need the Fedora docs database restored before testing or running the plugin. If you skip this, `test_search.py` and the plugin will fail with a connection error. Follow the [download and restore steps](#where-does-the-database-come-from) first.
+
 ```bash
 # Set up environment
 uv sync
 
-# Test search independently
+# Test search independently (requires database running)
 uv run python test_search.py
 
-# Run maubot with the plugin
+# Run maubot with the plugin (requires database running)
 uv run python -m maubot -c config.yaml
 ```
 
@@ -122,12 +124,8 @@ In any Matrix room where the bot is present:
 
 ## Related projects
 
-- **[docs2db](https://github.com/rhel-lightspeed/docs2db)** — RAG database builder (Red Hat)
-- **[docs2db-api](https://github.com/rhel-lightspeed/docs2db-api)** — Query API for docs2db databases (Red Hat)
-- **[docs2db-mcp-server](https://github.com/rhel-lightspeed/docs2db-mcp-server)** — MCP server for AI assistants (Red Hat)
-- **[FedoraDocsRAG](https://github.com/Lifto/FedoraDocsRAG)** — Pre-built Fedora docs RAG database
-- **[Maubot](https://github.com/maubot/maubot)** — Plugin-based Matrix bot framework
-
-## License
-
-Apache-2.0
+- [docs2db](https://github.com/rhel-lightspeed/docs2db) — RAG database builder (Red Hat)
+- [docs2db-api](https://github.com/rhel-lightspeed/docs2db-api) — Query API for docs2db databases (Red Hat)
+- [docs2db-mcp-server](https://github.com/rhel-lightspeed/docs2db-mcp-server) — MCP server for AI assistants (Red Hat)
+- [FedoraDocsRAG](https://github.com/Lifto/FedoraDocsRAG) — Pre-built Fedora docs RAG database
+- [Maubot](https://github.com/maubot/maubot) — Plugin-based Matrix bot framework
