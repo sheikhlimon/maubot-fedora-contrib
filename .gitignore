@@ -1,0 +1,22 @@
+config.yaml
+.venv/
+__pycache__/
+*.pyc
+dist/
+build/
+*.egg-info/
+
+# Maubot runtime files
+maubot.db
+maubot.db-shm
+maubot.db-wal
+maubot.log
+plugins/
+trash/
+*.mbp
+
+# IDE / editor
+.claude/
+.idea/
+.vscode/
+*.swp

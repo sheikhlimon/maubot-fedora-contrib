@@ -1,0 +1,16 @@
+id: fedora.contrib
+version: 0.1.0
+modules:
+  - fedora_contrib
+main_class: FedoraContribBot
+database: false
+config: true
+extra_files:
+  - base-config.yaml
+
+dependencies:
+  - docs2db-api>=0.3.0
+
+soft_dependencies: []
+license: Apache-2.0
+description: Search Fedora contributor documentation from Matrix channels

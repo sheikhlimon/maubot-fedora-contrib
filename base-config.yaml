@@ -1,0 +1,20 @@
+# Database connection for docs2db RAG engine
+db_host: localhost
+db_port: 5432
+db_name: ragdb
+db_user: postgres
+db_password: postgres
+
+# Search behavior
+max_results: 3
+similarity_threshold: 0.5
+
+# Which rooms the bot should respond in (empty = all rooms)
+# Example: ["#fedora-join:fedoraproject.org", "#fedora-devel:fedoraproject.org"]
+allowed_rooms: []
+
+# Trigger: respond to messages starting with this prefix
+command_prefix: "!ask"
+
+# Bot identity
+bot_name: "Fedora Contributor Helper"
