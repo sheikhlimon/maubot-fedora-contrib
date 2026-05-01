@@ -129,3 +129,9 @@ In any Matrix room where the bot is present:
 - [docs2db-mcp-server](https://github.com/rhel-lightspeed/docs2db-mcp-server) — MCP server for AI assistants (Red Hat)
 - [FedoraDocsRAG](https://github.com/Lifto/FedoraDocsRAG) — Pre-built Fedora docs RAG database
 - [Maubot](https://github.com/maubot/maubot) — Plugin-based Matrix bot framework
+
+## Acknowledgements
+
+This project builds on the docs2db ecosystem and the FedoraDocsRAG pipeline developed by [@Lifto](https://github.com/Lifto).
+
+This plugin is an experimental application of those tools for improving Fedora contributor onboarding.
