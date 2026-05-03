@@ -1,5 +1,5 @@
 id: fedora.contrib
-version: 0.1.0
+version: 0.2.0
 modules:
   - fedora_contrib
 main_class: FedoraContribBot
@@ -10,7 +10,8 @@ extra_files:
 
 dependencies:
   - docs2db-api>=0.3.0
+  - aiohttp>=3.9
 
 soft_dependencies: []
 license: Apache-2.0
-description: Search Fedora contributor documentation from Matrix channels
+description: Search Fedora contributor documentation and create welcome tickets from Matrix channels
