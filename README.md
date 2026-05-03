@@ -7,7 +7,7 @@ A [Maubot](https://github.com/maubot/maubot) plugin that answers Fedora contribu
 Users type `!ask <question>` in a Matrix room and the bot replies with relevant Fedora documentation snippets.
 
 ```
-!ask how do I fork a repo on Pagure?
+!ask how do I become a Fedora contributor?
 ```
 
 The bot searches a PostgreSQL database of Fedora docs using vector similarity + BM25 hybrid search, reranks results with a cross-encoder model, and returns the top matches.
@@ -118,8 +118,8 @@ In any Matrix room where the bot is present:
 
 ```
 !ask how do I become a Fedora contributor?
-!ask git clone ssh failing on src.fedoraproject.org
-!ask how do I create a Bodhi update?
+!ask where do I find easy issues to start with?
+!ask how do I submit my first contribution?
 ```
 
 ## Related projects
