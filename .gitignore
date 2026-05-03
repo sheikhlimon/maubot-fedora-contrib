@@ -20,3 +20,6 @@ trash/
 .idea/
 .vscode/
 *.swp
+
+# Test scripts
+test_*.py

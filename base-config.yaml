@@ -18,3 +18,16 @@ command_prefix: "!ask"
 
 # Bot identity
 bot_name: "Fedora Contributor Helper"
+
+# Fedora Forgejo (forge.fedoraproject.org) integration for !openticket
+forgejo_base_url: "https://forge.fedoraproject.org"
+# API token with issue:create permission on the WelcomeToFedora repo
+forgejo_api_token: ""
+# Repository owner/name for the Welcome-to-Fedora project
+forgejo_repo: "join/WelcomeToFedora"
+# Label IDs to apply to new welcome tickets (must exist in the repo)
+# Run: curl -s https://forge.fedoraproject.org/api/v1/repos/join/WelcomeToFedora/labels
+# 3564 = "C: Introduction requested", 3602 = "S: Hello Fedora World"
+forgejo_welcome_label_ids:
+  - 3564
+  - 3602
